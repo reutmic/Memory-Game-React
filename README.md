@@ -1,78 +1,18 @@
-# React exercise - Internet Programming Course
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-You need to add relevant npm libraries and of course run npm install.
-You are given sample images for the project in the public folder. Feel free to use them or replace them with your own images.
+# Memory Game
+A memory game made in Webstorm IDE, using React.
+
 ## Authors
-
-Name and email:
-
-## General Information
+Reut Michaeli
 
 
+## Score calculation
+First, I calculated the highest score possible by multiplying the total number of cards by the number of cards pairs. For example, for a game board of 4 rows and 2 columns, the highest score achievable is: (4*2) * ((4*2) / 2) = 32. (total number of cards is 8, and the number of pairs is 8/2=4).
+I also defined the lowest score possible, which is equal to the total number of cards. So in the previous example, the player's score range is between 8 and 32. (As long as the player found all the pairs, they will get a positive score). Then, I decreased the value of the highest score according to the number of steps and the time delay of the game (as long as the score doesn't go below the lowest score): For a time delay of 0.5 or 1.0 : each step reduces the score by 1 point. For a time delay of 1.5 or 2.0, each step reduces the score by 2 points. In conclusion: the score is between the lowest score and the highest score, which are defined by the total number of cards, and with less steps and low time delay, the score will be higher.
 
-## Available Scripts
+## Images shuffle algorithm
+I defined an array of the images' URLs according to the total number of cards: The URLs are pushed twice to the array, and according to their order (first is image numbered 0). For example: For a game with 2 rows and 3 columns, a total of 6 cards, the array will have the following images URLs in this order: [0.jpg, 0.jpg, 1.jpg, 1.jpg, 2.jpg, 2.jpg]. Then, the Fisher–Yates algorithm is being executed on this array, shuffling all the images URLs.
+Finally, after the array is shuffled thanks to the algorithm, the game cards are being created with the images from the shuffled array according to their order in the array, resulting in shuffled cards every time the game starts.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Execution
+Execute "npm install" in the terminal, then run the program by executing "npm start" in the terminal or a suitable npm run configuration, 
+and open [http://localhost:3000](http://localhost:3000) to view it in your browser.
