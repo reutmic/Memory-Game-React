@@ -1,5 +1,5 @@
 # Memory Game
-A memory game made in Webstorm IDE, using React.
+A memory game made with React.
 
 ## Authors
 Reut Michaeli
@@ -14,5 +14,5 @@ I defined an array of the images' URLs according to the total number of cards: T
 Finally, after the array is shuffled thanks to the algorithm, the game cards are being created with the images from the shuffled array according to their order in the array, resulting in shuffled cards every time the game starts.
 
 ## Execution
-Execute "npm install" in the terminal, then run the program by executing "npm start" in the terminal or a suitable npm run configuration, 
-and open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Execute "npm install" in the terminal, then run the program by: executing "npm start" in the terminal, or run a suitable npm run configuration.
+Then, open [http://localhost:3000](http://localhost:3000) to view the game in the browser.
